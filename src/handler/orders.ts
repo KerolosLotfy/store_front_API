@@ -85,7 +85,7 @@ const Delete = async (
       parseInt(req.params.order_id)
     );
     res.json({
-      action: "Delete one Order by user_id and order_id]",
+      action: "Delete one Order by user_id and order_id",
       data: result,
     });
   } catch (error) {

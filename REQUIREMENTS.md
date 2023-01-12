@@ -36,12 +36,12 @@
     {
       "action": "show all users ",
       "data": [
-        {
-          "id": 1,
-          "userName": "test",
-          "firstName": "test",
-          "lastName": "test",
-          "email": "test@test.com"
+        {{
+            "firstname": "test",
+            "lastname": "test",
+            "username": "test",
+            "email": "test@test.net",
+            "pass": "test"
         }
       ]
     }
@@ -50,7 +50,7 @@
 - Show **`Cookie Token required`**
 
   - HTTP verb `GET`
-  - Endpoint:- `/store/:id` - **id of the user to be retrieved**
+  - Endpoint:- `/store/:id` 
   - Request Body
 
     ```json
@@ -60,7 +60,7 @@
   - Response Body -- `User object`
 
     ```
-    page
+    page (html)
     ```
 
 - Create **`Cookie Token required`**
@@ -85,10 +85,11 @@
     massage on website
     ```
 
+- To upate / delete must `click on username ` or get `/profile/:id` 
 - Delete **`Cookie Token required`**
 
   - HTTP verb `post`
-  - Endpoint:- `/delete/:id` - **id of the user to be deleted**
+  - Endpoint:- `/delete/:id` 
   - Request Body
 
     ```json
@@ -162,7 +163,7 @@
 - Show **`Cookie Token required`**
 
   - HTTP verb `GET`
-  - Endpoint:- `/product/:id/:product_id` - **id of the product to be retrieved**
+  - Endpoint:- `/product/:id/:product_id` 
   - Request Body
 
     ```json
@@ -176,7 +177,8 @@
       "product": {
         "id": 1,
         "product_name": "product name",
-        "Description": "product description",
+        "user_id" : "1",
+        "description": "product description",
         "price": 9.99,
         "category": "Electronics.",
         "image": "long text...."
@@ -193,7 +195,7 @@
     ```json
     {
       "product_name": "product name",
-      "Description": "product description",
+      "description": "product description",
       "price": 9.99,
       "category": "Electronics.",
       "image": "long text...." // uploadiImage
@@ -209,7 +211,7 @@
 - Delete **`Cookie Token required`**
 
   - HTTP verb `post`
-  - Endpoint:- `/product/:id/delete/:product_id` - **id of the product to be deleted**
+  - Endpoint:- `/product/:id/delete/:product_id` 
   - Request Body
 
     ```json
@@ -223,7 +225,8 @@
       "product": {
         "id": 1,
         "product_name": "product name",
-        "Description": "product description",
+        "user_id" : "1",
+        "description": "product description",
         "price": 9.99,
         "category": "Electronics.",
         "image": "long text...."
@@ -240,7 +243,7 @@
     ```json
     {
       "product_name": "product name",
-      "Description": "product description",
+      "description": "product description",
       "price": 9.99,
       "category": "Electronics.",
       "image": "long text...."
@@ -254,7 +257,8 @@
       "product": {
         "id": 1,
         "product_name": "product name",
-        "Description": "product description",
+        "user_id" : "1",
+        "description": "product description",
         "price": 9.99,
         "category": "Electronics.",
         "image": "long text...."
@@ -278,7 +282,7 @@
 
     ```json
     {
-      "action": "update one Order by user_id and product_id",
+      "action": "show all Orders by user id",
       "data": {
         "id": 1,
         "order_status": "active",
@@ -292,7 +296,7 @@
 - Show - **`Cookie Token required`**
 
   - HTTP verb `GET`
-  - Endpoint:- `/order/:id/:product_id` - **id of the order to be retrieved**
+  - Endpoint:- `/orders/:id/:product_id` 
   - Request Body
 
     ```json
@@ -303,13 +307,11 @@
 
     ```json
     {
-      "action": "show one Order by user_id and product_id",
+      "action": "show one Order by user_id",
       "data": {
         "id": 1,
         "order_status": "active",
         "user_id": "1",
-        "product_id": "1",
-        "quatitiy": 2
       }
     }
     ```
@@ -322,7 +324,6 @@
 
     ```json
     {
-      "quantity": 2,
       "order_status": "active"
     }
     ```
@@ -336,8 +337,6 @@
         "id": 1,
         "order_status": "active",
         "user_id": "1",
-        "product_id": "1",
-        "quatitiy": 2
       }
     }
     ```
@@ -345,7 +344,7 @@
 - Delete **`Cookie Token required`**
 
   - HTTP verb `post`
-  - Endpoint:- `/order/:id/delete/:product_id` - **id of the order to be deleted**
+  - Endpoint:- `/order/:id/delete/:order_id` 
   - Request Body
 
     ```json
@@ -356,13 +355,11 @@
 
     ```json
     {
-      "action": "Delete one Order by user_id and product_id]",
+      "action": "Delete one Order by user_id and order_id",
       "data": {
         "id": 1,
         "order_status": "active",
         "user_id": "1",
-        "product_id": "1",
-        "quatitiy": 2
       }
     }
     ```
@@ -370,13 +367,12 @@
 - Edit **`Cookie Token required`**
 
   - HTTP verb `post`
-  - Endpoint:- `/order/:id/delete/:product_id`
+  - Endpoint:- `/orders/:id/update/:order_id`
   - Request Body
 
     ```json
     {
       "order_status": "completed",
-      "quatitiy": 3
     }
     ```
 
@@ -384,13 +380,11 @@
 
     ```json
     {
-      "action": "Delete one Order by user_id and product_id]",
+      "action": "Delete one Order by user_id and order_id",
       "data": {
         "id": 1,
         "order_status": "completed",
         "user_id": "1",
-        "product_id": "1",
-        "quatitiy": 3
       }
     }
     ```
@@ -559,9 +553,7 @@ CREATE TABLE IF NOT EXISTS products_store(
 CREATE TABLE IF NOT EXISTS orders_store(
     id SERIAL PRIMARY KEY,
     user_id bigint references users_Store(id),
-    product_id bigint references products_store(id),
     order_status VARCHAR(50),
-    quantity integer
 );
 ```
 
@@ -597,7 +589,7 @@ type userData = {
 type productData = {
   id?: number;
   product_name: string;
-  user_id: number;
+  user_id: string;
   category: string;
   price: number;
   description: string;
@@ -610,9 +602,7 @@ type productData = {
 ```typescript
 type orderType = {
   id?: number;
-  user_id: number;
-  product_id: number;
-  quantity: number;
+  user_id: string; 
   order_status: string;
 };
 ```

@@ -27,6 +27,7 @@
         TOKEN_SECRET = alpapakirolos6@
         ```
 -  download postgres database on your driver by [postgres](https://www.postgresql.org/)`.
+- 
 -   download packages by run `yarn` or `npm i`.
 -   runing application by run `yarn start` or `npm run start`
 
