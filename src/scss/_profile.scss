@@ -1,0 +1,40 @@
+// Profile Page
+.information {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    width: max-content;
+    max-width: 100vw;
+}
+
+.information form input {
+    display: block;
+    margin-top: 30px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    max-width: 100%;
+}
+
+.information label input {
+    left: 0;
+    top: 30px;
+}
+.information form input:not([type="submit"]) {
+    width: 600px;
+}
+.information form input[type="submit"] {
+    margin: 0;
+    display: inline-block;
+    background-color: var(--green);
+    color: var(--bg-color);
+}
+.information #del {
+    display: inline-block;
+    background-color: #e91e63;
+    color: var(--bg-color);
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+}

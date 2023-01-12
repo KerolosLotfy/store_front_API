@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./parts/head.ejs') %> <% if (typeof pageTitle
+        !=='undefined' ) { %>
+        <title><%= pageTitle %></title>
+        <% } %>
+    </head>
+
+    <body>
+        <div class="home">
+            <header class="fx-c">
+                <div class="container w-full h-full fx-bet p-10">
+                    <div class="logo">
+                        <a href=""> 3la<i>Z</i>w2k</a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="landing fx-c w-full">
+                <div class="container p-relative">
+                    <% if (newUser) {%>
+                    <div class="p-absolute massage m-auto p-15 txt-c txt-capt">
+                        successfully
+                        <a href="/store/login" class="login">
+                            please (login)
+                        </a>
+                    </div>
+
+                    <%} else if (newUser === false) { %>
+                    <div
+                        class="p-absolute massage error m-auto p-15 txt-c txt-capt"
+                    >
+                        your email found already
+                    </div>
+                    <%} %>
+                    <div class="form d-fx fx-column p-10">
+                        <h1 class="txt-capt w-full txt-c m-0">sign Up</h1>
+                        <p class="desc w-full txt-c m-0 m-bottom-10">Welcome</p>
+                        <p
+                            class="mass m-auto w-full p-10 m-0 txt-c txt-capt font-bold"
+                        ></p>
+
+                        <form
+                            action="/store/signup"
+                            method="post"
+                            class="p-20 d-fx fx-column"
+                        >
+                            <div class="p-relative m-bottom-15">
+                                <input
+                                    type="text"
+                                    name="firstname"
+                                    id="firstName"
+                                    class="w-full p-15"
+                                    placeholder="First Name"
+                                    required
+                                />
+                                <span
+                                    class="icon-check-circle-o p-absolute check"
+                                ></span>
+                            </div>
+                            <div class="p-relative m-bottom-15">
+                                <input
+                                    type="text"
+                                    name="lastname"
+                                    id="lastName"
+                                    class="w-full p-15"
+                                    placeholder="Last Name"
+                                    required
+                                />
+                                <span
+                                    class="icon-check-circle-o p-absolute check"
+                                ></span>
+                            </div>
+
+                            <div class="p-relative m-bottom-15">
+                                <input
+                                    type="text"
+                                    name="username"
+                                    id="userName"
+                                    class="w-full p-15"
+                                    placeholder="User Name"
+                                    required
+                                />
+                                <span
+                                    class="icon-check-circle-o p-absolute check"
+                                ></span>
+                            </div>
+                            <div class="p-relative m-bottom-15">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    class="w-full p-15"
+                                    placeholder="Email"
+                                    required
+                                />
+                                <span
+                                    class="icon-check-circle-o p-absolute check"
+                                ></span>
+                            </div>
+                            <div class="p-relative m-bottom-15">
+                                <input
+                                    type="password"
+                                    name="pass"
+                                    id="pass"
+                                    class="w-full p-15"
+                                    placeholder="Password"
+                                    required
+                                />
+                                <span
+                                    class="icon-check-circle-o p-absolute check"
+                                ></span>
+                            </div>
+                            <div class="p-relative">
+                                <input
+                                    type="password"
+                                    id="confirm"
+                                    class="w-full p-15"
+                                    placeholder="confirm Password"
+                                    required
+                                />
+                                <span
+                                    class="icon-check-circle-o p-absolute check"
+                                ></span>
+                            </div>
+                            <input
+                                type="submit"
+                                value="join"
+                                id="joinBtn"
+                                class="p-10 m-auto m-top-10 fx-c font-bold"
+                            />
+                            <a
+                                href="/store/login"
+                                class="w-full m-0 txt-capt txt-c m-top-10 fx-c login"
+                                >already have an account
+                            </a>
+                        </form>
+                    </div>
+                    <div class="img fx-c fx-column txt-c h-full d-none">
+                        <img src="/images/landing.svg" alt="landing" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%#
+        <script>
+            document.querySelector(".login").addEventListener("click", (e) => {
+                e.preventDefault();
+                location.pathname = "/login";
+            });
+            document.querySelector(".logo").addEventListener("click", (e) => {
+                e.preventDefault();
+                location.pathname = "/";
+            });
+
+            const confirmPass = document.getElementById("confirm");
+            const pass = document.getElementById("pass");
+            const joinBtn = document.getElementById("joinBtn");
+            const iName = document.getElementById("userName");
+            const iEmail = document.getElementById("email");
+            const check = document.querySelectorAll(".form input + .check");
+
+            pass.addEventListener("input", (e) => {
+                if (pass.value.length >= 8) {
+                    pass.nextElementSibling.style.color = "var(--green)";
+                } else if (pass.value === "") {
+                    pass.nextElementSibling.style.color = "var(--gray)";
+                } else {
+                    pass.nextElementSibling.style.color = "#e91e63";
+                }
+            });
+            confirmPass.addEventListener("input", (e) => {
+                if (pass.value === confirmPass.value) {
+                    confirmPass.nextElementSibling.style.color = "var(--green)";
+                } else if (confirmPass.value === "") {
+                    confirmPass.nextElementSibling.style.color = "var(--gray)";
+                } else {
+                    confirmPass.nextElementSibling.style.color = "#e91e63";
+                    iName.nextElementSibling.setAttribute(
+                        "title",
+                        "pass must be more than 8"
+                    );
+                }
+            });
+
+            iName.addEventListener("input", (e) => {
+                if (iName.value === "kero") {
+                    iName.nextElementSibling.style.color = "#e91e63";
+                    iName.nextElementSibling.setAttribute(
+                        "title",
+                        "user name already used"
+                    );
+                } else if (iName.value === "") {
+                    iName.nextElementSibling.style.color = "var(--gray)";
+                } else {
+                    iName.nextElementSibling.style.color = "var(--green)";
+                    iName.nextElementSibling.setAttribute("title", "valid");
+                }
+            });
+            iEmail.addEventListener("input", (e) => {
+                if (iEmail.value === "kero@gamil.com") {
+                    iEmail.nextElementSibling.style.color = "#e91e63";
+                    iEmail.nextElementSibling.setAttribute(
+                        "title",
+                        "email already used"
+                    );
+                } else if (iEmail.value === "") {
+                    iEmail.nextElementSibling.style.color = "var(--gray)";
+                } else {
+                    iEmail.nextElementSibling.style.color = "var(--green)";
+                    iEmail.nextElementSibling.setAttribute("title", "valid");
+                }
+            });
+
+            joinBtn.addEventListener("click", (e) => {
+                check.forEach((checkIcon) => {
+                    if (checkIcon.style.color !== "var(--green)") {
+                        e.preventDefault();
+                        document.querySelector(".form >.mass").style.display =
+                            "block";
+                        document
+                            .querySelector(".form >.mass")
+                            .classList.add("error");
+                        document.querySelector(
+                            ".form >.mass"
+                        ).innerHTML = `${checkIcon.previousElementSibling.getAttribute(
+                            "placeholder"
+                        )} not vailed`;
+                        setTimeout(() => {
+                            document.querySelector(
+                                ".form >.mass"
+                            ).style.display = "none";
+                            document
+                                .querySelector(".form >.mass")
+                                .classList.remove("error");
+                        }, 1000);
+                    }
+                });
+            });
+        </script>
+        %>
+    </body>
+</html>

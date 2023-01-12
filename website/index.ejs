@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./parts/head.ejs') %> <% if (typeof pageTitle
+        !=='undefined' ) { %>
+        <title><%= pageTitle %></title>
+        <% } %>
+    </head>
+
+    <body>
+        <div class="home">
+            <header class="fx-c">
+                <div class="container w-full h-full fx-bet p-10">
+                    <div class="logo">
+                        <a href="/store"> 3la<i>Z</i>w2k</a>
+                    </div>
+                    <!-- nav -->
+                    <ul class="d-fx align-c txt-capt">
+                        <li class="fx-c m-left-20">
+                            <a
+                                href="/store/login"
+                                id="loginPage"
+                                class="p-relative"
+                                >login</a
+                            >
+                        </li>
+                        <li class="fx-c m-left-20">
+                            <a
+                                href="/store/signup"
+                                id="signupPage"
+                                class="p-relative"
+                                >signup</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <div class="landing fx-c w-full">
+                <div class="container">
+                    <div class="txt fx-c fx-column border-half txt-c h-full">
+                        <h1 class="m-0">welcome</h1>
+                        <p class="desc">Choose what suits your taste</p>
+                    </div>
+                    <div class="img fx-c fx-column txt-c h-full">
+                        <img src="/images/landing.svg" alt="landing" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script></script>
+
+        <script src="./js/app.js"></script>
+    </body>
+</html>

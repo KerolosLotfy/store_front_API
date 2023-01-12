@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./parts/head.ejs') %>
+        <% if (typeof pageTitle !=='undefined' ) { %>
+            <title>
+                <%= pageTitle %>
+            </title>
+            <% } %>
+</head>
+
+<body>
+    <header class="fx-c p-relative">
+        <div class="container w-full h-full fx-bet p-10 ">
+            <div class="logo">
+                <a href="/"> 3la<i>Z</i>w2k</a>
+            </div>
+            <!-- nav -->
+            <ul class="d-fx align-c txt-capt">
+                <!-- <li class="fx-c m-left-20"><a href="" id="searchIcon" class="p-relative "><span
+                            class="icon-search1"></span></a></li> -->
+                
+                            <% if (user !== undefined ) { %>
+                <li class="fx-c m-left-20">
+                    <a href="/products/<%= user.id  %>" id="" class="p-relative  ">Products</a>
+                </li>
+                <li class="fx-c m-left-20">
+                    <a href="/product/<%= user.id  %> " id="" class="p-relative  ">add Product</a>
+                </li>
+                <% } %>
+                
+                <li class="fx-c m-left-20">
+                    <a href="" id="signupPage" class="p-relative ">
+                        <span class="icon-bell p-relative">
+                            <i class="notif p-absolute border-half"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="fx-c m-left-20"><a href="" id="signupPage" class="p-relative "><span
+                            class="icon-shopping-cart p-relative cart">
+                            <i class="cont p-absolute">0</i>
+
+                        </span>
+                        </span></a></li>
+                 <% if (user !== undefined ) { %>
+                    <li class="fx-c m-left-20">
+                        <a href="/profile/<%= user.id %>" id="loginPage" class="p-relative ">
+                            <span class="icon-user-circle "></span>
+                            <%= user.username %>
+                        </a>
+                    </li>
+                    <% } %>
+
+                    
+            </ul>
+        </div>
+
+
+        <form action="" method="post" class="p-absolute fx-c w-full">
+            <input type="text" name="search" id="search" class="m-auto " placeholder="search">
+            <input type="submit" value="" id="get" class="p-10 p-relative m-0">
+            <label for="get" class="p-absolute"></label>
+        </form>
+    </header>
+
+    <!-- Slider -->
+    <section id="slider">
+        <div class="container">
+            <div class="  fx-c  p-relative  m-auto">
+                <img src="/images/landing.svg" alt="landing">
+            </div>
+            <div class="arrows fx-bet p-absolute  w-full">
+                <span class="icon-arrow-left2"></span>
+                <span class="icon-arrow-right2"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="m-top-20">
+        <h1 class="w-full p-10 m-auto txt-capt txt-c">Top 5 orders</h1>
+        <div class="container d-grid p-10 m-auto ">
+            <div class="products p-relative ">
+                <div class="cards d-grid gap-20">
+                    <% for( let i=0; i < 5; i++ ) { %>
+                        <div class="prodCard  p-10  p-relative d-fx  fx-column gap-10">
+                            <img src="/images/landing.svg" alt="">
+                            <p class="prodName m-0 txt-capt txt-c">
+                                <a href="">Product Name</a>
+                            </p>
+                            <p class="prodPrice m-0 txt-c">100$ </p>
+                            <div class="rating m-0 txt-c">
+                                <% for( let i=0; i < 5; i++ ) { %>
+                                    <span class="icon-star  "></span>
+                                    <!-- <span class="icon-star star"></span> -->
+                                    <% } %>
+
+                            </div>
+                            <div class="btn m-auto p-10 txt-capt" id="addCart"><a href="">add to Cart</a></div>
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- footer -->
+    <%- include('./parts/footer.ejs') %>
+
+
+
+        <script>
+            document.querySelector('#searchIcon').addEventListener('click', (e) => {
+                e.preventDefault();
+                document.forms[0].classList.toggle('searching')
+            })
+        </script>
+
+        <script src="./js/app.js"></script>
+</body>
+
+</html>

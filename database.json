@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "driver": { "ENV": "driver" },
+        "host": { "ENV": "postgres_host" },
+        "database": { "ENV": "postgres_db" },
+        "user": { "ENV": "postgres_user" },
+        "password": { "ENV": "postgres_password" },
+        "token": { "ENV": "TOKEN_SECRET" },
+        "salt": { "ENV": "SALT_ROUNDS" },
+        "pepper": { "ENV": "PEPPER" }
+    },
+    "test": {
+        "driver": { "ENV": "driver" },
+        "host": { "ENV": "postgres_host" },
+        "database": { "ENV": "postgres_test_db" },
+        "user": { "ENV": "postgres_user" },
+        "password": { "ENV": "postgres_password" }
+    }
+}

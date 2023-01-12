@@ -1,0 +1,27 @@
+/* margin & padding */
+$px: 0;
+@for $i from 0 through 6 {
+    .m-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .m-#{$px} {
+        margin:#{$px}px ;
+    }
+    .m-top-#{$px} {
+        margin-top:#{$px}px ;
+    }
+    .m-bottom-#{$px} {
+        margin-bottom:#{$px}px ;
+    }
+    .m-right-#{$px} {
+        margin-right:#{$px}px ;
+    }
+    .m-left-#{$px} {
+        margin-left:#{$px}px ;
+    }
+    .p-#{$px} {
+        padding:#{$px}px ;
+    }
+    $px: $px + 5;
+}

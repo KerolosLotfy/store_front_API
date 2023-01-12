@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./parts/head.ejs') %>
+        <% if (typeof pageTitle !=='undefined' ) { %>
+            <title>
+                <%= pageTitle %>
+            </title>
+            <% } %>
+</head>
+
+<body>
+    <header class="fx-c p-relative">
+        <div class="container w-full h-full fx-bet p-10 ">
+            <div class="logo">
+                <a href="/store"> 3la<i>Z</i>w2k</a>
+            </div>
+            <!-- nav -->
+            <ul class="d-fx align-c txt-capt">
+                <li class="fx-c m-left-20">
+                    <a href="/products/<%= user.id  %>" id="" class="p-relative  ">Products</a>
+                </li>
+                <li class="fx-c m-left-20">
+                    <a href="/product/<%= user.id  %> " id="" class="p-relative  ">add Product</a>
+                </li>
+                <li class="fx-c m-left-20">
+                    <a href="" id="signupPage" class="p-relative ">
+                        <span class="icon-bell p-relative">
+                            <i class="notif p-absolute border-half"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="fx-c m-left-20"><a href="" id="signupPage" class="p-relative "><span
+                            class="icon-shopping-cart p-relative cart">
+                            <i class="cont p-absolute">0</i>
+
+                        </span>
+                        </span></a></li>
+                
+                        <li class="fx-c m-left-20">
+                            <a href="/profile/<%= user.id %>" id="loginPage" class="p-relative ">
+                                <span class="icon-user-circle "></span>
+                                <%= user.username %> 
+                            </a>
+                        </li>
+            </ul>
+        </div>
+
+
+        
+    </header>
+
+
+    <% if (user !==undefined ) { %>
+                    
+        <div class="information p-10 txt-capt m-auto">
+            <form action="/update/<%= user.id %>" method="post" class=" w-full h-full d-fx fx-column">
+            <div class="p-relative w-full p-10">
+                <label for="firstName" class="p-absolute">first name</label>
+            <input type="text" name="firstname" id="firstName" class="p-10 "  value="<%=  user.firstname %> ">
+            </div>
+            
+            <div class="p-relative w-full p-10">
+                <label for="lastName" class="p-absolute">last name</label>
+            <input type="text" name="lastname" id="lastName" class=" p-10 "  value="<%=  user.lastname %> ">
+            </div>
+            
+            <div class="p-relative w-full p-10">
+                <label for="userName" class="p-absolute">username</label>
+            <input type="text" name="username" id="userName" class=" p-10 "  value="<%=  user.username %> ">
+
+            </div>
+            
+            <div class="p-relative w-full p-10">
+                <label for="email" class="p-absolute">Email</label>
+            <input type="email" name="email" id="email" class="p-10  "  value="<%=  user.email %> ">
+            </div>
+
+            <div class="p-relative w-full p-10">
+                <label for="pass" class="p-absolute">password</label>
+            <input type="password" name="pass" id="pass" class="p-10  " >
+            </div>
+
+            <div>
+                <input type="submit" value="save"  class="p-10 ">
+            </div>
+        </form>
+
+        <form action="/delete/<%= user.id %>" method="post">
+            <input type="submit" id="del" value="Delete Account"  class="p-10 m-10 ">
+        </form>
+    </div>
+    <% } %>
+    
+    <!-- footer -->
+    <%- include('./parts/footer.ejs') %>
+</body>
+
+</html>

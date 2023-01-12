@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./parts/head.ejs') %>
+        <% if (typeof pageTitle !=='undefined' ) { %>
+            <title>
+                <%= pageTitle %>
+            </title>
+            <% } %>
+</head>
+
+<body>
+    <header class="fx-c p-relative">
+        <div class="container w-full h-full fx-bet p-10 ">
+            <div class="logo">
+                <a href="/store"> 3la<i>Z</i>w2k</a>
+            </div>
+            <!-- nav -->
+            <ul class="d-fx align-c txt-capt">
+                <li class="fx-c m-left-20">
+                    <a href="/products/<%= id  %>" id="" class="p-relative  ">Products</a>
+                </li>
+                <li class="fx-c m-left-20">
+                    <a href="/product/<%= id  %> " id="" class="p-relative  ">add Product</a>
+                </li>
+                
+                <li class="fx-c m-left-20">
+                    <a href="" id="signupPage" class="p-relative ">
+                        <span class="icon-bell p-relative">
+                            <i class="notif p-absolute border-half"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="fx-c m-left-20"><a href="" id="signupPage" class="p-relative "><span
+                            class="icon-shopping-cart p-relative cart">
+                            <i class="cont p-absolute">0</i>
+
+                        </span>
+                        </span></a></li>
+
+                <li class="fx-c m-left-20">
+                    <a href="/profile/<%= id %>" id="loginPage" class="p-relative ">
+                        <span class="icon-user-circle "></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+
+    </header>
+
+    
+    <section id="products" class="m-top-20">
+        <% if ( typeof products !== "undefined" ) { %>
+        <div class="container d-grid p-10 m-auto ">
+            <div class="products p-relative ">
+                <div class="cards d-grid gap-20">
+                        <% for( let i = 0; i < products.length; i++ ) { %>
+                                <div class="prodCard  p-10  p-relative d-fx  fx-column gap-10">
+                                    <img src="data:image/png;base64,<%= products[i].image%>" alt="image Product">
+                                   
+                                <p class="prodName m-0 txt-capt txt-c">
+                                    <a href="">
+                                        <%= products[i].product_name %>
+                                    </a>
+                                </p>
+                                <p class="prodPrice m-0 txt-c">
+                                    <%= products[i].price %> $
+                                </p>
+                                <div class="rating m-0 txt-c">
+                                    <% for( let i=0; i < 5; i++ ) { %>
+                                            <span class="icon-star"></span>
+                                            <!-- <span class="icon-star star"></span> -->
+                                        <% } %>
+    
+                                    </div>
+                                    <div class="btn  m-auto p-10 txt-capt" id="addCart"><a href="">add to Cart</a></div>
+                                </div>
+                                <% } %>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <% } %>
+                </section>
+
+
+            <!-- footer -->
+            <%- include('./parts/footer.ejs') %>
+</body>
+
+</html>

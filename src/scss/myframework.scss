@@ -1,0 +1,102 @@
+/* Start Myframework*/
+// import functions 
+@use './functions' as *;
+
+/* flex */
+.d-fx {
+    display: flex;
+}
+
+.fx-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fx-bet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.align-c {
+    align-items: center;
+}
+
+.justf-c {
+    justify-content: center;
+}
+
+.justf-bet {
+    justify-content: space-between;
+}
+
+.fx-row {
+    flex-direction: row;
+}
+
+.fx-column {
+    flex-direction: column;
+}
+
+.fx-wrap {
+    flex-wrap: wrap;
+}
+
+/*gap*/
+.gap-10 {
+    gap: 10px;
+}
+.gap-20 {
+    gap: 20px;
+}
+.gap-30 {
+    gap: 30px;
+}
+
+/*grid*/
+.d-grid {
+    display: grid;
+}
+
+/*width*/
+.w-full {
+    width: 100%;
+}
+/*height*/
+.h-full {
+    height: 100%;
+}
+/*postion*/
+.p-absolute {
+    position: absolute;
+}
+
+.p-relative {
+    position: relative;
+}
+
+/*text*/
+.txt-c {
+    text-align: center;
+}
+
+.txt-capt {
+    text-transform: capitalize;
+}
+
+/*font*/
+.font-bold {
+    font-weight: bolder;
+}
+
+/*border-radius*/
+.border-half {
+    border-radius: 50%;
+}
+
+/*Mobile*/
+@media (max-width:768px) {
+    .d-none {
+        display: none;
+    }
+}
+/* End Myframework*/

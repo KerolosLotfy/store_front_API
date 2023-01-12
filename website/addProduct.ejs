@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./parts/head.ejs') %>
+        <% if (typeof pageTitle !=='undefined' ) { %>
+            <title>
+                <%= pageTitle %>
+            </title>
+            <% } %>
+</head>
+
+<body>
+    
+    <header class="fx-c p-relative">
+        <div class="container w-full h-full fx-bet p-10 ">
+            <div class="logo">
+                <a href="/store"> 3la<i>Z</i>w2k</a>
+            </div>
+            <!-- nav -->
+            <ul class="d-fx align-c txt-capt">
+                <li class="fx-c m-left-20">
+                    <a href="/products/<%= id  %>" id="" class="p-relative  ">Products</a>
+                </li>
+                <li class="fx-c m-left-20">
+                    <a href="" id="signupPage" class="p-relative ">
+                        <span class="icon-bell p-relative">
+                            <i class="notif p-absolute border-half"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="fx-c m-left-20"><a href="" id="signupPage" class="p-relative "><span
+                            class="icon-shopping-cart p-relative cart">
+                            <i class="cont p-absolute">0</i>
+
+                        </span>
+                        </span></a></li>
+                        <% if (typeof id !== "undefined") { %>
+                            <li class="fx-c m-left-20">
+                                <a href="/profile/<%= id %>" id="loginPage" class="p-relative ">
+                                    <span class="icon-user-circle "></span>
+                                </a>
+                            </li>
+                        <% } %>
+                        
+            </ul>
+        </div>
+
+
+        
+    </header>
+
+    
+    <div class="container p-relative">
+        <% if (message === true) { %>
+            <div
+            class="p-absolute massage  m-auto p-15 txt-c txt-capt"
+        >
+        successfully
+        </div>
+        <% } %>
+        
+        <div class="information p-10 txt-capt m-auto">
+                
+                <form action="/product/<%= id %>" method="post" enctype="multipart/form-data"  class=" w-full h-full d-fx fx-column">
+                    <div class="p-relative w-full p-10">
+                <label for="prodName" class="p-absolute">product name</label>
+            <input type="text" name="product_name" id="prodName" class="p-10 ">
+            </div>
+            
+            <div class="p-relative w-full p-10">
+                <label for="category" class="p-absolute">catagroy</label>
+            <input type="text" name="category" id="category" class=" p-10 " >
+            </div>
+            
+            <div class="p-relative w-full p-10">
+                <label for="description" class="p-absolute">description</label>
+            <input type="text" name="description" id="description" class=" p-10 ">
+
+            </div>
+            
+            <div class="p-relative w-full p-10">
+                <label for="image" class="p-absolute">image</label>
+                <input type="file"  name="image" id="image" class="p-10  ">
+            </div>
+
+            <div class="p-relative w-full p-10">
+                <label for="price" class="p-absolute">Price</label>
+            <input type="text" name="price" id="price" class="p-10  " >
+            </div>
+
+            <div>
+                <input type="submit" value="create"  class="p-10 ">
+            </div>
+            
+        </form>
+        
+        </div>
+    </div>
+    
+
+    
+    <!-- footer -->
+    <%- include('./parts/footer.ejs') %>
+</body>
+
+</html>

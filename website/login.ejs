@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./parts/head.ejs') %> <% if (typeof pageTitle
+        !=='undefined' ) { %>
+        <title><%= pageTitle %></title>
+        <% } %>
+    </head>
+    <body>
+        <div class="home">
+            <header class="fx-c">
+                <div class="container w-full h-full fx-bet p-10">
+                    <div class="logo">
+                        <a href=""> 3la<i>Z</i>w2k</a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="landing fx-c w-full p-absolute">
+                <div class="container p-relative">
+                    <% if (check === null) {%>
+                    <div
+                        class="p-absolute massage error m-auto p-15 txt-c txt-capt"
+                    >
+                        Your Email Not Correct
+                    </div>
+                    <% } %> <% if (check === false) { %>
+                    <div
+                        class="p-absolute massage error m-auto p-15 txt-c txt-capt"
+                    >
+                        Your Email Correct but Your Password Not Correct
+                    </div>
+                    <% } %>
+                    <div class="form d-fx fx-column p-10 p-relative">
+                        <h1 class="txt-capt w-full txt-c m-0">login</h1>
+                        <p class="desc w-full txt-c m-0 m-bottom-10">Welcome</p>
+                        <p class="mass txt-c txt-capt font-bold p-10 m-0">
+                            You Email or password not vailed
+                        </p>
+
+                        <form
+                            action="/store/login"
+                            method="post"
+                            class="p-20 d-fx fx-column"
+                        >
+                            <input
+                                type="text"
+                                name="email"
+                                id="email"
+                                class="w-full p-15 m-bottom-30"
+                                placeholder="Email"
+                            />
+                            <input
+                                type="password"
+                                name="pass"
+                                id="pass"
+                                class="w-full p-15"
+                                placeholder="Password"
+                            />
+                            <a
+                                href="/resetPass"
+                                class="w-full m-0 txt-capt m-top-10 forgetpass"
+                                >forget my Password?
+                            </a>
+                            <input
+                                type="submit"
+                                value="login"
+                                class="p-10 m-auto m-top-20 fx-c font-bold"
+                            />
+                            <a
+                                href="/store/signup"
+                                class="w-full m-0 txt-capt fx-c txt-c m-top-10 signUp"
+                                >create New account
+                            </a>
+                        </form>
+                    </div>
+                    <div class="img fx-c fx-column txt-c h-full d-none">
+                        <img src="/images/landing.svg" alt="landing" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document
+                .querySelector(".forgetpass")
+                .addEventListener("click", (e) => {
+                    e.preventDefault();
+                    location.pathname = "/store/forgetpass";
+                });
+
+            document.querySelector(".logo").addEventListener("click", (e) => {
+                e.preventDefault();
+                location.pathname = "/";
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,311 @@
+/* margin & padding */
+.m-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m-0 {
+  margin: 0px;
+}
+
+.m-top-0 {
+  margin-top: 0px;
+}
+
+.m-bottom-0 {
+  margin-bottom: 0px;
+}
+
+.m-right-0 {
+  margin-right: 0px;
+}
+
+.m-left-0 {
+  margin-left: 0px;
+}
+
+.p-0 {
+  padding: 0px;
+}
+
+.m-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m-5 {
+  margin: 5px;
+}
+
+.m-top-5 {
+  margin-top: 5px;
+}
+
+.m-bottom-5 {
+  margin-bottom: 5px;
+}
+
+.m-right-5 {
+  margin-right: 5px;
+}
+
+.m-left-5 {
+  margin-left: 5px;
+}
+
+.p-5 {
+  padding: 5px;
+}
+
+.m-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.m-top-10 {
+  margin-top: 10px;
+}
+
+.m-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.m-right-10 {
+  margin-right: 10px;
+}
+
+.m-left-10 {
+  margin-left: 10px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.m-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m-15 {
+  margin: 15px;
+}
+
+.m-top-15 {
+  margin-top: 15px;
+}
+
+.m-bottom-15 {
+  margin-bottom: 15px;
+}
+
+.m-right-15 {
+  margin-right: 15px;
+}
+
+.m-left-15 {
+  margin-left: 15px;
+}
+
+.p-15 {
+  padding: 15px;
+}
+
+.m-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m-20 {
+  margin: 20px;
+}
+
+.m-top-20 {
+  margin-top: 20px;
+}
+
+.m-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.m-right-20 {
+  margin-right: 20px;
+}
+
+.m-left-20 {
+  margin-left: 20px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.m-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m-25 {
+  margin: 25px;
+}
+
+.m-top-25 {
+  margin-top: 25px;
+}
+
+.m-bottom-25 {
+  margin-bottom: 25px;
+}
+
+.m-right-25 {
+  margin-right: 25px;
+}
+
+.m-left-25 {
+  margin-left: 25px;
+}
+
+.p-25 {
+  padding: 25px;
+}
+
+.m-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m-30 {
+  margin: 30px;
+}
+
+.m-top-30 {
+  margin-top: 30px;
+}
+
+.m-bottom-30 {
+  margin-bottom: 30px;
+}
+
+.m-right-30 {
+  margin-right: 30px;
+}
+
+.m-left-30 {
+  margin-left: 30px;
+}
+
+.p-30 {
+  padding: 30px;
+}
+
+/* Start Myframework*/
+/* flex */
+.d-fx {
+  display: flex;
+}
+
+.fx-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fx-bet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.align-c {
+  align-items: center;
+}
+
+.justf-c {
+  justify-content: center;
+}
+
+.justf-bet {
+  justify-content: space-between;
+}
+
+.fx-row {
+  flex-direction: row;
+}
+
+.fx-column {
+  flex-direction: column;
+}
+
+.fx-wrap {
+  flex-wrap: wrap;
+}
+
+/*gap*/
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+.gap-30 {
+  gap: 30px;
+}
+
+/*grid*/
+.d-grid {
+  display: grid;
+}
+
+/*width*/
+.w-full {
+  width: 100%;
+}
+
+/*height*/
+.h-full {
+  height: 100%;
+}
+
+/*postion*/
+.p-absolute {
+  position: absolute;
+}
+
+.p-relative {
+  position: relative;
+}
+
+/*text*/
+.txt-c {
+  text-align: center;
+}
+
+.txt-capt {
+  text-transform: capitalize;
+}
+
+/*font*/
+.font-bold {
+  font-weight: bolder;
+}
+
+/*border-radius*/
+.border-half {
+  border-radius: 50%;
+}
+
+/*Mobile*/
+@media (max-width: 768px) {
+  .d-none {
+    display: none;
+  }
+}
+/* End Myframework*/ /*# sourceMappingURL=myframework.css.map */
+
+/*# sourceMappingURL=myframework.css.map */
