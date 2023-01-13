@@ -144,7 +144,7 @@
 
 ### Products
 
-- Index **`Cookie Token required`**
+- Index
 
   - HTTP verb `GET`
   - Endpoint:- `/products/:id`
@@ -160,7 +160,7 @@
     website page all products
     ```
 
-- Show **`Cookie Token required`**
+- Show
 
   - HTTP verb `GET`
   - Endpoint:- `/product/:id/:product_id` 
@@ -186,7 +186,7 @@
     }
     ```
 
-- Create **`Cookie Token required`**
+- Create 
 
   - HTTP verb `POST`
   - Endpoint:- `/product/:id`

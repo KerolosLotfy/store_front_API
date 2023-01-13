@@ -21,28 +21,28 @@ app.set("view engine", "ejs");
 app.set("views", "./website");
 
 app.get("/", (_req, res, _next) => {
-  res.render("index", {
-    pageTitle: "profile",
-  });
+    res.render("index", {
+        pageTitle: "profile",
+    });
 });
 app.get("/store", (_req, res, _next) => {
-  res.render("index", {
-    pageTitle: "Home",
-  });
+    res.render("index", {
+        pageTitle: "Home",
+    });
 });
 
 app.get("/store/login", (_req, res, _next) => {
-  res.render("login", {
-    pageTitle: "login",
-    check: undefined,
-  });
+    res.render("login", {
+        pageTitle: "login",
+        check: undefined,
+    });
 });
 
 app.get("/store/signup", (_req, res, _next) => {
-  res.render("signup", {
-    pageTitle: "signup",
-    newUser: undefined,
-  });
+    res.render("signup", {
+        pageTitle: "signup",
+        newUser: undefined,
+    });
 });
 
 users_routers(app);
@@ -52,14 +52,14 @@ order_products_routers(app);
 
 app.use(errorHandler);
 app.use((_req, res, _next) => {
-  res.json({
-    status: 401,
-    message: "route not found",
-  });
+    res.json({
+        status: 401,
+        message: "route not found",
+    });
 });
 
 app.listen(port, hostName, () => {
-  console.log(`Server Running on http://${hostName}:${port}`);
+    console.log(`Server Running on http://${hostName}:${port}`);
 });
 
 export default app;
