@@ -21,13 +21,19 @@
         postgres_test_db = store_test
         postgres_password = alpapakirolos6@
         postgres_host = 127.0.0.1
+        postgres_port = 5432
         ENV = dev
         PEPPER = alpapakirolos6@
         SALT_ROUNDS = 10
         TOKEN_SECRET = alpapakirolos6@
         ```
 -  download postgres database on your driver by [postgres](https://www.postgresql.org/)`.
-- 
+-  then run in cmd 
+    -   `` psql -U POstgres ``
+    -   `` pasword : (your pasword) ``
+    - `` create database store ; ``
+    -  `` create database store_test ; ``
+    -   `` /q ``
 -   download packages by run `yarn` or `npm i`.
 -   runing application by run `yarn start` or `npm run start`
 
